@@ -1,0 +1,21 @@
+# 应用服务 WEB 访问端口
+server:
+  port: 8080
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test2?serverTimezone=UTC
+    username: root
+    password: 123456
+  redis:
+    host: 192.168.80.129
+    port: 6379
+  mvc:  #swagger接口文档
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+cache:
+  ttl: '{"account":60,"dept":30}' #自定义某些缓存空间的过期时间
